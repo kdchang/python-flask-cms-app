@@ -1,0 +1,19 @@
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+<div class="container main-container">
+    <h1>使用者登入</h1>
+    <hr>
+    <form action="/login" method="POST">
+        <div>
+            {{ form.csrf_token }}
+            <label for="">使用者信箱</label>
+            <input class="form-control" type="email" name="email" placeholder="使用者信箱">
+            <label for="">使用者密碼</label>
+            <input class="form-control" type="password" name="password" placeholder="使用者密碼">
+            <hr>
+            <button class="btn btn-primary btn-block" type="submit">馬上登入</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
