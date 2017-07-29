@@ -1,0 +1,28 @@
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+<div class="container main-container">
+    <h1>新增文章</h1>
+    <hr>
+    <form action="/posts/create" method="POST">
+        <div>
+            {{ form.csrf_token }}
+            <label for="">文章標題</label>
+            <input class="form-control" type="title" name="title" placeholder="文章標題">
+            <br>
+            <label for="">文章內容</label>
+            <textarea class="form-control" type="content" name="content" placeholder="請輸入文章內容"></textarea>
+            <br>
+            <label for="">文章分類</label>
+            <select class="form-control" name="category">
+                <option value="tech">科技</option>
+                <option value="finance">財經</option>
+                <option value="society">社會</option>
+                <option value="poltics">政治</option>
+            </select>
+            <hr>
+            <button class="btn btn-primary btn-block" type="submit">提交送出</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

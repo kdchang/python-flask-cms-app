@@ -1,8 +1,8 @@
-from flask_sqlalchemy import SQLAlchemy
+from webapp.extensions import db
+from flask_login import UserMixin, current_user
 
-db = SQLAlchemy()
 
-class User(db.Model):
+class User(db.Model, UserMixin):
     __tablename__ = 'user'
     id = db.Column(db.Integer(), primary_key=True)
     username = db.Column(db.String(80), unique=True)
@@ -21,12 +21,14 @@ class User(db.Model):
 class Post(db.Model):
     __tablename__ = 'post'
     id = db.Column(db.Integer(), primary_key=True)
-    title = db.Column(db.String(80), unique=True)
-    content = db.Column(db.String(120), unique=True)
+    title = db.Column(db.String(80))
+    content = db.Column(db.String(120))
+    category = db.Column(db.String(120))
 
-    def __init__(self, title, content):
+    def __init__(self, title, content, category):
         self.title = title
         self.content = content
+        self.category = category
 
     def __repr__(self):
-        return '<User %r>' % self.username
+        return '<Post %r>' % self.title

@@ -20,6 +20,7 @@
 5. Flsk-Oauthlib
 6. mysqlclient
 7. python-docx-template
+8. gspread
 
 ## MySQL Setting
 
@@ -46,6 +47,22 @@ $ mysql -u root
 5. Exit MySQL
 ```
 >>> quit
+```
+
+## DB Migrate
+1. Initial
+```
+$ python manage.py db init
+```
+
+2. Add Migration
+```
+$ python manage.py db migrate
+```
+
+3. Update to DB
+```
+$ python manage.py db upgrade
 ```
 
 ## Documents

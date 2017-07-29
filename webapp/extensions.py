@@ -1,12 +1,11 @@
 from flask_login import LoginManager
 from flask_wtf.csrf import CSRFProtect
-# from flask_mongoengine import MongoEngine
-# from flask_debugtoolbar import DebugToolbarExtension
+from flask_sqlalchemy import SQLAlchemy
 from flask_oauthlib.client import OAuth
-from .config import Config
+from webapp.config import Config
 
 config = Config()
-
+db = SQLAlchemy()
 
 login_manager = LoginManager()
 csrf = CSRFProtect()
@@ -30,8 +29,8 @@ oauth = OAuth()
 
 google = oauth.remote_app(
     'google',
-    consumer_key='38849957222-lagstdl79ah76t67bgj8if065ho6nujn.apps.googleusercontent.com',
-    consumer_secret='53sCnPdIGAYWKelwHX_eSR3F',
+    consumer_key='',
+    consumer_secret='',
     request_token_params={
         'scope': 'email'
     },
