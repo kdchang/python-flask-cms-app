@@ -24,19 +24,29 @@
 ## MySQL Setting
 
 1. Enter MySQL
+```
 $ mysql -u root
+```
 
 2. select DB
+```
 >>> use mysql;
+```
 
 3. Update user data and setup root password
+```
 >>> update user set password=PASSWORD("password") where User='root'; 
+```
 
-4. 刷新 MySQL
+4. Refresh MySQL
+```
 >>> flush privileges;
+```
 
 5. Exit MySQL
+```
 >>> quit
+```
 
 ## Documents
 1. [flask-oauthlib](https://github.com/lepture/flask-oauthlib/blob/master/example/google.py)
