@@ -1,9 +1,11 @@
 # Python Flask CMS App
+This is a Content Management System(CMS) App build by Python Flask Edit
 
 ## Feature
-1. Oauth auth
+1. Oauth auth / auth
 2. CRUD
-3. read/write google doc / word / spreadsheet
+3. read/write google spreadsheet
+4. word.docx
 
 ## Usage
 1. $ git clone
@@ -11,6 +13,7 @@
 3. $ pip install -r requirements.txt
 4. $ python manage.py db init
 5. $ python manage.py db migrate
+6. $ python manage.py db upgrade
 
 ## Extensions
 1. Flask
@@ -71,3 +74,6 @@ $ python manage.py db upgrade
 3. [Mac OS 上安裝 MySQL 以及相關設定筆記](https://www.zeusdesign.com.tw/article/19-Mac%20OS%20%E4%B8%8A%E5%AE%89%E8%A3%9D%20MySQL%20%E4%BB%A5%E5%8F%8A%E7%9B%B8%E9%97%9C%E8%A8%AD%E5%AE%9A%E7%AD%86%E8%A8%98.html)
 4. [Install MySQL on macOS Sierra](https://gist.github.com/nrollr/3f57fc15ded7dddddcc4e82fe137b58e)
 5. [brew install mysql on mac os el capitan](https://stackoverflow.com/questions/34345726/brew-install-mysql-on-mac-os-el-capitan)
+6. [gspread API Reference](http://gspread.readthedocs.io/en/latest/index.html)
+7. [Inserting a Python datetime.datetime object into MySQL](https://stackoverflow.com/questions/1136437/inserting-a-python-datetime-datetime-object-into-mysql)
+8. [Inserting a unix timestamp into MySQL from Python [duplicate]](https://stackoverflow.com/questions/24367155/inserting-a-unix-timestamp-into-mysql-from-python)

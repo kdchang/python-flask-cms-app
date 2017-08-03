@@ -1,28 +1,32 @@
 {% extends 'layouts/layout.html' %}
 
 {% block content %}
-<div class="container main-container">
-    <h1>新增文章</h1>
-    <hr>
-    <form action="/posts/{{post.id}}/update" method="POST">
-        <div>
-            {{ form.csrf_token }}
-            <label for="">文章標題</label>
-            <input class="form-control" type="title" name="title" placeholder="文章標題">
-            <br>
-            <label for="">文章內容</label>
-            <textarea class="form-control" type="content" name="content" placeholder="請輸入文章內容"></textarea>
-            <br>
-            <label for="">文章分類</label>
-            <select class="form-control" name="category">
-                <option value="tech">科技</option>
-                <option value="finance">財經</option>
-                <option value="society">社會</option>
-                <option value="poltics">政治</option>
-            </select>
-            <hr>
-            <button class="btn btn-primary btn-block" type="submit">提交送出</button>
-        </div>
-    </form>
-</div>
+<h1>Update Post</h1>
+<hr>
+<form action="/posts/create" method="POST" enctype="multipart/form-data">
+    <div>
+        {{ form.csrf_token }}
+        <label for="">文章標題</label>
+        <input class="form-control" type="title" name="title" placeholder="文章標題" value="{{post.content}}" required>
+        <br>
+        <label for="">文章內容</label>
+        <textarea class="form-control" type="content" name="content" placeholder="請輸入文章內容" required>{{post.content}}</textarea>
+        <br>
+        <label for="">文章圖片</label>
+        <input type="file" name="image" class="form-control" required>
+        <br>
+        <label for="">文章分類</label>
+        <select class="form-control" name="category" required>
+            <option value="">請選擇</option>
+            <option {% if post.category == 'tech' %} selected {% endif %}  value="tech">科技</option>
+            <option {% if post.category == 'finance' %} selected {% endif %} value="finance">財經</option>
+            <option {% if post.category == 'society' %} selected {% endif %} value="society">社會</option>
+            <option {% if post.category == 'poltics' %} selected {% endif %} value="poltics">政治</option>
+            <option {% if post.category == 'sport' %} selected {% endif %} value="sport">體育</option>
+            <option {% if post.category == 'play' %} selected {% endif %} value="play">娛樂</option>
+        </select>
+        <hr>
+        <button class="btn btn-primary btn-block" type="submit">提交送出</button>
+    </div>
+</form>
 {% endblock %}

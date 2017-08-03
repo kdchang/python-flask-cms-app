@@ -9,11 +9,25 @@ db = SQLAlchemy()
 
 login_manager = LoginManager()
 csrf = CSRFProtect()
-login_manager.session_protection = 'strong'
+login_manager.session_protection = config.SESSION_SUPER_KEY
 login_manager.login_view = 'main.get_login'
 login_manager.login_message = 'Please LOG IN'
 login_manager.login_message_category = 'info'
 oauth = OAuth()
+
+google = oauth.remote_app(
+    'google',
+    consumer_key=config.GOOGLE_ID,
+    consumer_secret=config.GOOGLE_SECRET,
+    request_token_params={
+        'scope': 'email'
+    },
+    base_url='https://www.googleapis.com/oauth2/v1/',
+    request_token_url=None,
+    access_token_method='POST',
+    access_token_url='https://accounts.google.com/o/oauth2/token',
+    authorize_url='https://accounts.google.com/o/oauth2/auth',
+)
 
 # facebook = oauth.remote_app(
 #     'facebook',
@@ -26,17 +40,3 @@ oauth = OAuth()
 #     access_token_method='GET',
 #     authorize_url='https://www.facebook.com/dialog/oauth'
 # )
-
-google = oauth.remote_app(
-    'google',
-    consumer_key='',
-    consumer_secret='',
-    request_token_params={
-        'scope': 'email'
-    },
-    base_url='https://www.googleapis.com/oauth2/v1/',
-    request_token_url=None,
-    access_token_method='POST',
-    access_token_url='https://accounts.google.com/o/oauth2/token',
-    authorize_url='https://accounts.google.com/o/oauth2/auth',
-)

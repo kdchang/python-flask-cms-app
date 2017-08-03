@@ -1,22 +1,37 @@
 {% extends 'layouts/layout.html' %}
 
 {% block content %}
-	<!-- Main jumbotron for a primary marketing message or call to action -->
-	<div class="container main-container">
-		<!-- Example row of columns -->
-		<div class="row">
-			<div class="col-md-8">
-                {% for post in posts %}
-                    <div class="posts">
-                        <h2>{{ post.title }}</h2>
-                        <a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-                    </div>
-                {% endfor %}
-			</div>
-			<div class="col-md-4">
-				<h2>Category</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-					nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-			</div>
-		</div>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+    <!-- Example row of columns -->
+<div class="row">
+    <div class="col-md-8">
+        <h2>New Post</h2>
+        <hr>
+        {% for post in posts %}
+            <div class="posts">
+                <a href="/posts/{{post.id}}" role="button"><h3>{{ post.title }} </h3></a>
+                <a href="/posts/{{post.id}}" class="thumbnail">
+                    <img src="/static/uploads/{{post.image_path}}" alt="">
+                </a>
+                <span>{{ post.updated_at }}</span>
+                <span class="label label-primary">{{ post.category }}</span>
+            </div>
+            <hr>
+        {% endfor %}
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+            <h3 class="panel-title">Category</h3>
+        </div>
+        <div class="panel-body">
+            <a href="/posts?category=tech"><span class="label label-default">Technology</span></a>
+            <a href="/posts?category=finance"><span class="label label-default">Finance</span></a>
+            <a href="/posts?category=society"><span class="label label-default">Society</span></a>
+            <a href="/posts?category=politics"><span class="label label-default">Politics</span></a>
+            <a href="/posts?category=sport"><span class="label label-default">Sport</span></a>
+            <a href="/posts?category=play"><span class="label label-default">Play</span></a>
+        </div>
+    </div>
+</div>
 {% endblock %}

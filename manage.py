@@ -10,7 +10,7 @@ from webapp.models.main import db
 
 # default to dev config
 env = os.environ.get('WEBAPP_ENV', 'dev')
-app = create_app('webapp.config.%sConfig' % env.capitalize())
+app = create_app('webapp.config.{}Config'.format(env.capitalize()))
 
 migrate = Migrate(app, db)
 manager = Manager(app)

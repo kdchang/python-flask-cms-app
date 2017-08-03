@@ -99,6 +99,8 @@ ENV/
 # mypy
 .mypy_cache/
 
+# project
 migrations/
-
-config.json
+auth.json
+config.ini
+uploads/

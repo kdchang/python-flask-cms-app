@@ -5,7 +5,6 @@ from wtforms.validators import DataRequired
 class UserForm(FlaskForm):
     username = StringField('username', validators=[DataRequired()])
     email = StringField('email', validators=[DataRequired()])
-    google_id = StringField('google_id', validators=[DataRequired()])
 
 class PostForm(FlaskForm):
     title = StringField('title', validators=[DataRequired()])
