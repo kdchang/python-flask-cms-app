@@ -27,6 +27,13 @@ This is a Content Management System(CMS) App build by Python Flask.
 
 ## MySQL Setting
 
+if you use linux/ubuntu, please install 
+
+```
+$ sudo apt-get install mysql-server
+$ sudo apt-get install libmysqlclient-dev
+```
+
 1. Enter MySQL
 ```
 $ mysql -u root
@@ -77,3 +84,6 @@ $ python manage.py db upgrade
 6. [gspread API Reference](http://gspread.readthedocs.io/en/latest/index.html)
 7. [Inserting a Python datetime.datetime object into MySQL](https://stackoverflow.com/questions/1136437/inserting-a-python-datetime-datetime-object-into-mysql)
 8. [Inserting a unix timestamp into MySQL from Python [duplicate]](https://stackoverflow.com/questions/24367155/inserting-a-unix-timestamp-into-mysql-from-python)
+9. [mysql_config not found when installing mysqldb python interface](https://stackoverflow.com/questions/7475223/mysql-config-not-found-when-installing-mysqldb-python-interface)
+10. [Change MySQL default character set to UTF-8 in my.cnf?](https://stackoverflow.com/questions/3513773/change-mysql-default-character-set-to-utf-8-in-my-cnf)
+11. [ Mysql 插入中文错误：Incorrect string value: '\xE7\xA8\x8B\xE5\xBA\x8F...' for column 'course' at row 1](http://blog.csdn.net/ch717828/article/details/41357431)
