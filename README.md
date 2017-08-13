@@ -1,5 +1,5 @@
 # Python Flask CMS App
-This is a Content Management System(CMS) App build by Python Flask Edit
+This is a Content Management System(CMS) App build by Python Flask.
 
 ## Feature
 1. Oauth auth / auth
