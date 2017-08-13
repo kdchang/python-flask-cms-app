@@ -7,7 +7,7 @@
     <div>
         {{ form.csrf_token }}
         <label for="">文章標題</label>
-        <input class="form-control" type="title" name="title" placeholder="文章標題" value="{{post.content}}" required>
+        <input class="form-control" type="title" name="title" placeholder="文章標題" value="{{post.title}}" required>
         <br>
         <label for="">文章內容</label>
         <textarea class="form-control" type="content" name="content" placeholder="請輸入文章內容" required>{{post.content}}</textarea>
