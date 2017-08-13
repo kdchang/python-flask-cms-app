@@ -24,6 +24,7 @@ This is a Content Management System(CMS) App build by Python Flask.
 6. mysqlclient
 7. python-docx-template
 8. gspread
+9. gunicorn
 
 ## MySQL Setting
 
@@ -32,6 +33,28 @@ if you use linux/ubuntu, please install
 ```
 $ sudo apt-get install mysql-server
 $ sudo apt-get install libmysqlclient-dev
+```
+
+setup UTF-8, my.cnf file is located at /etc/mysql/
+
+```
+[mysqld]
+collation-server = utf8_unicode_ci
+init-connect='SET NAMES utf8'
+character-set-server = utf8
+skip-character-set-client-handshake
+
+[client]
+default-character-set   = utf8
+
+[mysql]
+default-character-set   = utf8
+```
+
+Restart
+
+```
+$ sudo service mysql restart
 ```
 
 1. Enter MySQL
