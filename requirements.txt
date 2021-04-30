@@ -30,7 +30,7 @@ python-docx==0.8.6
 python-editor==1.0.3
 requests==2.18.2
 requests-oauthlib==0.8.0
-rsa==3.4.2
+rsa==4.7
 six==1.10.0
 SQLAlchemy==1.1.12
 urllib3==1.22
